@@ -10,7 +10,7 @@ router.get('/productos', (req, res)=>{
   res.sendFile(path.join(__dirname,'../pages/productos.html'))
 })
 
-router.get('/Api/productos', (req, res)=>{
+router.get('/api/productos', (req, res)=>{
   res.json({data:[{title:"queso",type:"rancio"}]})
 })
 
