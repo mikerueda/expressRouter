@@ -1,22 +1,26 @@
-const express = require('express')
-const path = require('path')
-const router = express.Router()
+const express = require('express');
+const path = require('path');
 
-router.get('/', (req, res)=>{
-  res.sendFile(path.join(__dirname,'../pages/home.html'))
-})
+const users = require('../api/users');
+const products = require('../api/products');
+const router = express.Router();
 
-router.get('/productos', (req, res)=>{
-  res.sendFile(path.join(__dirname,'../pages/productos.html'))
-})
+// PAGES ROUTES //
+router.get('/', (req, res) => {
+	res.sendFile(path.join(__dirname, '../pages/home.html'));
+});
 
-router.get('/Api/productos', (req, res)=>{
-  res.json({data:[{title:"queso",type:"rancio"}]})
-})
+router.get('/productos', (req, res) => {
+	res.sendFile(path.join(__dirname, '../pages/productos.html'));
+});
 
-router.use((req, res)=>{
-  res.status(404).send('pifiaste wache')
-})
+// API ROUTES //
+router.get('/api/users', users);
+router.get('/api/products', products);
 
+// NOT FOUNS HANDLER //
+router.use((req, res) => {
+	res.status(404).send('pifiaste wache');
+});
 
-module.exports = router
+module.exports = router;
