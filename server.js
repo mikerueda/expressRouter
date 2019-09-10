@@ -5,7 +5,7 @@ const server = express();
 const port = 4002;
 
 server.use(logger('dev'));
-server.use('/statics', express.static('public'));
+server.use('/assets', express.static('public'));
 server.use(router);
 
 server.listen(port, () => {

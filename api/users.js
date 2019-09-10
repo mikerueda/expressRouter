@@ -5,7 +5,6 @@ const users = [
 ];
 
 const handler = (req, res, next) => {
-	console.log('Pidiendo usuarios');
 	res.json({ users });
 	next();
 };
