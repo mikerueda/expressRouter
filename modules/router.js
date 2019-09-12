@@ -15,7 +15,11 @@ router.get('/productos', (req, res) => {
 });
 
 // API ROUTES //
-router.get('/api/users', users);
+
+router.get('/api/users', users.getUser);
+router.get('/api/users/:id', users.getUserByid);
+router.post('/api/users', users.postUser);
+
 router.get('/api/products', products);
 
 // NOT FOUNS HANDLER //
