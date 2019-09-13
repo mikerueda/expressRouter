@@ -12,8 +12,8 @@ server.use(
 		extended: true
 	})
 );
-
 server.use(bodyParser.json());
+
 server.use(logger('dev'));
 server.use('/assets', express.static('public'));
 server.use(router);

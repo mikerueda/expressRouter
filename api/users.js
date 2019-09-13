@@ -9,7 +9,7 @@ const getUser = (req, res, next) => {
 	next();
 };
 
-const postUser = (req, res) => {
+const postUser = (req, res, next) => {
 	let data = req.body;
 	if (data.hasOwnProperty('name') && data.hasOwnProperty('email')) {
 		data.id = users.length + 1;
@@ -18,6 +18,7 @@ const postUser = (req, res) => {
 	} else {
 		res.status('400').send('fijate que pusiste mal los datos, ameo.');
 	}
+	next();
 };
 
 const getUserByid = (req, res, next) => {
