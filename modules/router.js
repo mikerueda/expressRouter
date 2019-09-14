@@ -14,6 +14,10 @@ router.get('/productos', (req, res) => {
 	res.sendFile(path.join(__dirname, '../pages/productos.html'));
 });
 
+router.get('/usuarios', (req, res) => {
+	res.sendFile(path.join(__dirname, '../pages/users.html'));
+});
+
 // API ROUTES //
 
 router.get('/api/users', users.getUser);
